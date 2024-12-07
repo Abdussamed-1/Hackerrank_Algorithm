@@ -59,20 +59,19 @@ def maxCost(cost, labels, dailyCount):
         if labels[i] == "legal":
             legal_count += 1
 
-        # Eğer günlük legal count tamamlanmışsa
+        # If the daily legal count is complete
         if legal_count == dailyCount:
             max_cost = max(max_cost, total_cost)
-            total_cost = 0  # Yeni güne başla
-            legal_count = 0  # Legal sayacını sıfırla
+            total_cost = 0  # Start a new day
+            legal_count = 0  # Reset the legal count
 
     return max_cost
 
-# Örnek Test
+# Example Test
 cost = [2, 5, 3, 11, 1]
 labels = ["legal", "illegal", "legal", "illegal", "legal"]
 dailyCount = 2
-print(maxCost(cost, labels, dailyCount))  # Çıktı: 14
-
+print(maxCost(cost, labels, dailyCount))  # Output: 14
 
 
 
